@@ -8,7 +8,7 @@
     
     <header>@yield('header_content')</header>
 
-    <main class="grid grid-cols-4 justify-center">
+    <main>
 
         @yield('main_content')
 
