@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Inertia\Inertia;
 
 class PostController extends Controller
 {
@@ -16,7 +17,9 @@ class PostController extends Controller
         
         $posts = Post::paginate(6);
 
-        return view('posts.index', compact('posts'));
+        return Inertia::render('Posts/index', [
+            'posts' => $posts
+        ]);
 
     }
 
